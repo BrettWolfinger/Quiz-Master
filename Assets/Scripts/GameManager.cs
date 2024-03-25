@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         endScreen.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
+    //Transition to the end screen once game is complete
     void Update()
     {
         if(quiz.isComplete)

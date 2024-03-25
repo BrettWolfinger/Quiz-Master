@@ -10,6 +10,7 @@ public class QuestionSO : ScriptableObject
     [SerializeField] string[] answers = new string[4];
     [SerializeField] int correctIndex;
 
+    //Getters
     public string GetQuestion() 
     {
         return question;
@@ -23,15 +24,5 @@ public class QuestionSO : ScriptableObject
     public string GetAnswer(int index)
     {
         return answers[index];
-    }
-}
-
-public class Test
-{
-    QuestionSO questionSO;
-
-    void TestA()
-    {
-        string questionText = questionSO.GetQuestion();
     }
 }

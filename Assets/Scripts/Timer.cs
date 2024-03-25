@@ -28,6 +28,7 @@ public class Timer : MonoBehaviour
     {
         timerValue -= Time.deltaTime;
 
+        //Change fill fraction on display depending on whether answering or reviewing
         if(timerValue > 0)
         {
             if(isAnsweringQuestion)
@@ -41,6 +42,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            //Toggle between answering and reviewing once time elapses
             if(!isAnsweringQuestion)
             {
                 timerValue = timeToAnswer;

@@ -40,12 +40,14 @@ public class Quiz : MonoBehaviour
         correctAnswerIndex = question.GetCorrectIndex();
         Image buttonImage;
 
+        //Change the sprite for the button with when correct answer is selected
         if(index == correctAnswerIndex)
         {
             questionText.text = "Correct!";
             buttonImage = answerButtons[index].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
         }
+        //Color the correct answer on incorrect selection
         else{
             questionText.text = "Sorry, the correct answer was;\n" + question.GetAnswer(correctAnswerIndex);
             buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
@@ -57,6 +59,7 @@ public class Quiz : MonoBehaviour
         isComplete = true;
     }
 
+    //Resets state of game for the next question
     void GetNextQuestion()
     {
         SetButtonState(true);
@@ -64,6 +67,7 @@ public class Quiz : MonoBehaviour
         DisplayQuestion();
     }
 
+    //Reload all buttons to default to reset interface
     void SetDefaultButtonSprites()
     {
         Image buttonImage;
@@ -74,6 +78,7 @@ public class Quiz : MonoBehaviour
         }
     }
 
+    //Display the question text and answer choices
     void DisplayQuestion()
     {
        questionText.text = question.GetQuestion();
@@ -85,6 +90,7 @@ public class Quiz : MonoBehaviour
         }
     }
 
+    //Toggle between button interactbility if there has been an answer
     void SetButtonState(bool state)
     {
         for(int i = 0; i < answerButtons.Length;i++)
